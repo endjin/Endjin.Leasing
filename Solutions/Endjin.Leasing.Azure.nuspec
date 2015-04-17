@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>Endjin.Leasing.Azure</id>
+    <version>3.0.0.0</version>
+    <description>Windows Azure Blob based Leasing Framework</description>
+    <title>Endjin's Windows Azure based Leasing Framework</title>
+    <authors>Endjin</authors>
+    <owners>Endjin</owners>
+    <copyright>Endjin 2015</copyright>
+    <language>en-GB</language>
+    <iconUrl>https://raw.github.com/endjin/Endjin.Leasing/master/Artefacts/Leasing-48px.png</iconUrl>
+    <projectUrl>https://github.com/endjin/Endjin.Leasing</projectUrl>
+    <licenseUrl>https://dl.dropboxusercontent.com/u/5892928/Endjin/Software-License/Software-License.txt</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="Endjin.Retry" version="1.0.0.0" />
+      <dependency id="Endjin.Leasing" version="1.0.0.0" />
+      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="3.1.0" />
+      <dependency id="WindowsAzure.Storage" version="4.3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="License.txt" target="License.txt" />
+    <file src="Install.ps1" target="tools" />
+    <file src="Endjin.Leasing.Azure.dll" target="lib\net45\" />
+  </files>
+</package>

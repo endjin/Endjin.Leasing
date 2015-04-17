@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>Endjin.Leasing</id>
+    <version>3.0.0.0</version>
+    <description>Endjin's Leasing Framework</description>
+    <title>Endjin's Leasing Framework</title>
+    <authors>Endjin</authors>
+    <owners>Endjin</owners>
+    <copyright>Endjin 2015</copyright>
+    <language>en-GB</language>
+    <iconUrl>https://raw.github.com/endjin/Endjin.Leasing/master/Artefacts/Leasing-48px.png</iconUrl>
+    <projectUrl>https://github.com/endjin/Endjin.Leasing</projectUrl>
+    <licenseUrl>https://dl.dropboxusercontent.com/u/5892928/Endjin/Software-License/Software-License.txt</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="Endjin.Core.Composition" version="2.2.0.0" />
+      <dependency id="Endjin.Retry" version="1.0.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="License.txt" target="License.txt" />
+    <file src="Install.ps1" target="tools" />
+    <file src="Endjin.Storage.Leasing.dll" target="lib\net45\" />
+  </files>
+</package>

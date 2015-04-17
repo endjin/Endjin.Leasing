@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34B930A8-5339-4CDC-9601-A6FBADBCFF80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Endjin</RootNamespace>
+    <AssemblyName>Endjin.Leasing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\Artefacts\endjin-public.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EndjinCoreComposition, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreComposition.dll</HintPath>
+    </Reference>
+    <Reference Include="EndjinCoreCompositionNet45, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreCompositionNet45.dll</HintPath>
+    </Reference>
+    <Reference Include="EndjinCoreContainer, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="EndjinCoreContainerNet45, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreContainerNet45.dll</HintPath>
+    </Reference>
+    <Reference Include="EndjinRetry, Version=1.0.0.47, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\Endjin.Retry.1.0.0.47\lib\portable-net45+win8\EndjinRetry.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Leasing\Installers\LeasableInstaller.cs" />
+    <Compile Include="Leasing\Leasable.cs" />
+    <Compile Include="Contracts\ILeasable.cs" />
+    <Compile Include="Contracts\ILease.cs" />
+    <Compile Include="Contracts\ILeaseFactory.cs" />
+    <Compile Include="Contracts\ILeasePolicy.cs" />
+    <Compile Include="Contracts\ILeasePolicyValidator.cs" />
+    <Compile Include="Contracts\ILeaseProvider.cs" />
+    <Compile Include="Leasing\Lease.cs" />
+    <Compile Include="Leasing\Exceptions\LeaseAcquisitionUnsuccessfulException.cs" />
+    <Compile Include="Leasing\LeaseFactory.cs" />
+    <Compile Include="Leasing\LeasePolicy.cs" />
+    <Compile Include="Leasing\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Leasing\Retry\Policies\DoNotRetryOnLeaseAcquisitionUnsuccessfulPolicy.cs" />
+    <Compile Include="Leasing\Retry\Policies\DoNotRetryPolicy.cs" />
+    <Compile Include="Leasing\Retry\Policies\RetryUntilLeaseAcquiredPolicy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Leasing\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

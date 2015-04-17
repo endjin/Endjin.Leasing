@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endjin.Leasing", "Endjin.Leasing\Endjin.Leasing.csproj", "{34B930A8-5339-4CDC-9601-A6FBADBCFF80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endjin.Leasing.Azure", "Endjin.Leasing.Azure\Endjin.Leasing.Azure.csproj", "{BC833557-EBB7-4292-B5B3-11166440CF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endjin.Leasing.Azure.Specs", "Endjin.Leasing.Azure.Specs\Endjin.Leasing.Azure.Specs.csproj", "{5DED940C-7AF9-40A9-A00B-BF624093B921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endjin.Leasing.Demo", "Endjin.Leasing.Demo\Endjin.Leasing.Demo.csproj", "{B89B7F17-D4E8-4E46-92DC-1CE18A720B45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@Demo", "@Demo", "{E0A99236-6C4A-4C70-B178-979F31C5A131}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@Specs", "@Specs", "{45FA441A-8950-45AB-AACE-6067AA3D8E7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34B930A8-5339-4CDC-9601-A6FBADBCFF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B930A8-5339-4CDC-9601-A6FBADBCFF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B930A8-5339-4CDC-9601-A6FBADBCFF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B930A8-5339-4CDC-9601-A6FBADBCFF80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC833557-EBB7-4292-B5B3-11166440CF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC833557-EBB7-4292-B5B3-11166440CF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC833557-EBB7-4292-B5B3-11166440CF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC833557-EBB7-4292-B5B3-11166440CF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DED940C-7AF9-40A9-A00B-BF624093B921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DED940C-7AF9-40A9-A00B-BF624093B921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DED940C-7AF9-40A9-A00B-BF624093B921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DED940C-7AF9-40A9-A00B-BF624093B921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89B7F17-D4E8-4E46-92DC-1CE18A720B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89B7F17-D4E8-4E46-92DC-1CE18A720B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89B7F17-D4E8-4E46-92DC-1CE18A720B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89B7F17-D4E8-4E46-92DC-1CE18A720B45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5DED940C-7AF9-40A9-A00B-BF624093B921} = {45FA441A-8950-45AB-AACE-6067AA3D8E7F}
+		{B89B7F17-D4E8-4E46-92DC-1CE18A720B45} = {E0A99236-6C4A-4C70-B178-979F31C5A131}
+	EndGlobalSection
+EndGlobal
