@@ -1,17 +1,17 @@
-﻿namespace Endjin.Leasing.Azure
+﻿namespace Endjin.Leasing
 {
     #region Using Directives
 
     using System;
 
-    using Endjin.Contracts;
+    using Endjin.Contracts.Leasing;
 
-    #endregion 
+    #endregion Using Directives
 
     /// <summary>
     /// Describes the behavior for validating Lease Policies.
     /// </summary>
-    public class LeasePolicyValidator : ILeasePolicyValidator 
+    public class AzureLeasePolicyValidator : ILeasePolicyValidator
     {
         /// <summary>
         /// Validates whether the proposed ILeasePolicy is valid for the given lease implementation.
@@ -24,22 +24,22 @@
         {
             if (leasePolicy.Duration.HasValue && (leasePolicy.Duration < TimeSpan.FromSeconds(15) || leasePolicy.Duration > TimeSpan.FromSeconds(59)))
             {
-                throw new ArgumentOutOfRangeException("leasePolicy", Strings.DurationOutOfRangeMessage);
+                throw new ArgumentOutOfRangeException("leasePolicy", "Duration proprerty is out of range. Windows Azure finite blob lease must be betweem 15 and 59 seconds");
             }
 
             if (leasePolicy.Name == null)
             {
-                throw new ArgumentNullException("leasePolicy", Strings.NamePropertyMustNotBeNull);
+                throw new ArgumentNullException("leasePolicy", "Name property must not be null");
             }
 
             if (leasePolicy.Name.Length < 1 || leasePolicy.Name.Length > 1024)
             {
-                throw new ArgumentOutOfRangeException("leasePolicy", Strings.NamePropertyMustBeBetween1And1024Characters);
+                throw new ArgumentOutOfRangeException("leasePolicy", "Name property must be between 1 and 1,024 characters.");
             }
 
             if (leasePolicy.Name.EndsWith(".") || leasePolicy.Name.EndsWith("/"))
             {
-                throw new ArgumentException(Strings.NamePropertyMustBeValid, "leasePolicy");
+                throw new ArgumentException("Name property must not end with a dot ('.') or a forward slash ('/')", "leasePolicy");
             }
         }
     }

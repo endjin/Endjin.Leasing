@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Endjin.Leasing.Azure.Specs.Features
+namespace Endjin.Storage.Leasing.Azure.Specs.Features
 {
     using TechTalk.SpecFlow;
     
@@ -32,8 +32,8 @@ namespace Endjin.Leasing.Azure.Specs.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LeasePolicyValidator", "In order to create a valid lease using windows Azure blob storage\nAs a dev\nI want" +
-                    " to ensure the lease policy meets the Azure blob leasing rules", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LeasePolicyValidator", "In order to create a valid lease using windows Azure blob storage\r\nAs a dev\r\nI wa" +
+                    "nt to ensure the lease policy meets the Azure blob leasing rules", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -232,6 +232,25 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I validate the policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
  testRunner.Then("it should throw a ArgumentOutOfRangeException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Name is null")]
+        public virtual void NameIsNull()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name is null", ((string[])(null)));
+#line 60
+this.ScenarioSetup(scenarioInfo);
+#line 61
+ testRunner.Given("the name on the lease policy is null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 62
+ testRunner.And("has a valid duration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.When("I validate the policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 64
+ testRunner.Then("it should throw a ArgumentNullException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

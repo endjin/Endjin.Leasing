@@ -1,4 +1,4 @@
-﻿namespace Endjin.Contracts
+﻿namespace Endjin.Contracts.Leasing
 {
     /// <summary>
     /// Describes the behavior for validating Lease Policies.

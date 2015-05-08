@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Endjin.Leasing.Azure.Specs.Features
+namespace Endjin.Storage.Leasing.Azure.Specs.Features
 {
     using TechTalk.SpecFlow;
     
@@ -20,6 +20,7 @@ namespace Endjin.Leasing.Azure.Specs.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Leasable")]
+    [NUnit.Framework.CategoryAttribute("ReleaseLeases")]
     public partial class LeasableFeature
     {
         
@@ -32,8 +33,9 @@ namespace Endjin.Leasing.Azure.Specs.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Leasable", "In order to avoid concurrency issues\nAs an actor in the system\nI want to have an " +
-                    "exclusive lease on a long running task", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Leasable", "In order to avoid concurrency issues\r\nAs an actor in the system\r\nI want to have a" +
+                    "n exclusive lease on a long running task", ProgrammingLanguage.CSharp, new string[] {
+                        "ReleaseLeases"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,20 +78,51 @@ namespace Endjin.Leasing.Azure.Specs.Features
                     "icy", new string[] {
                         "container",
                         "storage_emulator"});
-#line 7
-this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("the long running task takes 5 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 9
- testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the long running task takes 5 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.When("I execute the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I execute the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.And("it should return successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
+ testRunner.And("it should return successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
  testRunner.And("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with a result with duration less than" +
+            " the lease policy")]
+        [NUnit.Framework.CategoryAttribute("container")]
+        [NUnit.Framework.CategoryAttribute("storage_emulator")]
+        public virtual void ASingleActorExecutesALongRunningTaskWithAResultWithDurationLessThanTheLeasePolicy()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with a result with duration less than" +
+                    " the lease policy", new string[] {
+                        "container",
+                        "storage_emulator"});
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+ testRunner.Given("the long running task takes 5 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.When("I execute the task with a result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+ testRunner.And("it should return successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("the task result should be correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -105,19 +138,19 @@ this.ScenarioSetup(scenarioInfo);
                     "icy", new string[] {
                         "container",
                         "storage_emulator"});
-#line 16
+#line 27
 this.ScenarioSetup(scenarioInfo);
-#line 17
+#line 28
  testRunner.Given("the long running task takes 70 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 18
+#line 29
  testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 30
  testRunner.When("I execute the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 31
  testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
+#line 32
  testRunner.And("it should return successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 33
  testRunner.And("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -134,21 +167,23 @@ this.ScenarioSetup(scenarioInfo);
                     "ng the task", new string[] {
                         "container",
                         "storage_emulator"});
-#line 25
+#line 36
 this.ScenarioSetup(scenarioInfo);
-#line 26
+#line 37
  testRunner.Given("the long running task takes 20 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 27
+#line 38
  testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 39
  testRunner.And("actor B is currently running the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.When("Actor A executes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
+#line 40
+ testRunner.And("actor A executes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.When("the tasks have completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
  testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 31
+#line 43
  testRunner.And("it should return successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+#line 44
  testRunner.And("2 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -165,29 +200,62 @@ this.ScenarioSetup(scenarioInfo);
                     "linear retry strategy, whilst Actor B is currently running the task", new string[] {
                         "container",
                         "storage_emulator"});
-#line 35
+#line 47
 this.ScenarioSetup(scenarioInfo);
-#line 36
+#line 48
  testRunner.Given("the long running task takes 20 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 37
+#line 49
  testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 50
  testRunner.And("the lease duration is 40 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 51
  testRunner.And("we use a do not retry policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 52
  testRunner.And("we use a linear retry strategy with periodicity of 10 seconds and 10 max retries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 53
  testRunner.And("actor B is currently running the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
- testRunner.When("Actor A executes the task with options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 54
+ testRunner.And("actor A executes the task with options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.When("the tasks have completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
  testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 44
+#line 57
  testRunner.And("it should return unsuccessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
- testRunner.And("after 20 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 58
+ testRunner.And("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Actor A attempts to execute a long running task with a try once mutex, whilst Act" +
+            "or B is currently running the task")]
+        [NUnit.Framework.CategoryAttribute("container")]
+        [NUnit.Framework.CategoryAttribute("storage_emulator")]
+        public virtual void ActorAAttemptsToExecuteALongRunningTaskWithATryOnceMutexWhilstActorBIsCurrentlyRunningTheTask()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Actor A attempts to execute a long running task with a try once mutex, whilst Act" +
+                    "or B is currently running the task", new string[] {
+                        "container",
+                        "storage_emulator"});
+#line 61
+this.ScenarioSetup(scenarioInfo);
+#line 62
+ testRunner.Given("the long running task takes 20 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 63
+ testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("actor B is currently running the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And("actor A executes the task with a try once mutex", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.When("the tasks have completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
+ testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 68
+ testRunner.And("it should return unsuccessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
  testRunner.And("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -206,29 +274,29 @@ this.ScenarioSetup(scenarioInfo);
                     "ntly running the task", new string[] {
                         "container",
                         "storage_emulator"});
-#line 49
+#line 72
 this.ScenarioSetup(scenarioInfo);
-#line 50
+#line 73
  testRunner.Given("the long running task takes 20 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 51
+#line 74
  testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 75
  testRunner.And("the lease duration is 40 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 76
  testRunner.And("we use a do not retry on lease acquisition unsuccessful policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 77
  testRunner.And("we use a linear retry strategy with periodicity of 10 seconds and 10 max retries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 78
  testRunner.And("actor B is currently running the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
- testRunner.When("Actor A executes the task with options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
+#line 79
+ testRunner.And("actor A executes the task with options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.When("the tasks have completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 81
  testRunner.Then("it should not throw any exceptions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 58
+#line 82
  testRunner.And("it should return unsuccessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And("after 20 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 83
  testRunner.And("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -245,21 +313,21 @@ this.ScenarioSetup(scenarioInfo);
                     "icy and no retry strategy", new string[] {
                         "container",
                         "storage_emulator"});
-#line 63
+#line 86
 this.ScenarioSetup(scenarioInfo);
-#line 64
+#line 87
  testRunner.Given("the long running task takes 5 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 65
+#line 88
  testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 89
  testRunner.And("the lease duration is 40 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
+#line 90
  testRunner.And("we use a do not retry on lease acquisition unsuccessful policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
+#line 91
  testRunner.And("we use no retry strategy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 92
  testRunner.When("I execute the task with options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
+#line 93
  testRunner.Then("it should throw an AggregateException containing NullReferenceException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -276,21 +344,21 @@ this.ScenarioSetup(scenarioInfo);
                     "ry strategy", new string[] {
                         "container",
                         "storage_emulator"});
-#line 73
+#line 96
 this.ScenarioSetup(scenarioInfo);
-#line 74
+#line 97
  testRunner.Given("the long running task takes 5 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 75
+#line 98
  testRunner.And("the lease name is \"long-running-task\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 99
  testRunner.And("the lease duration is 40 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 100
  testRunner.And("we use no lease policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 101
  testRunner.And("we use a linear retry strategy with periodicity of 10 seconds and 10 max retries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 102
  testRunner.When("I execute the task with options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 103
  testRunner.Then("it should throw an AggregateException containing NullReferenceException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -305,12 +373,82 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with no lease policy", new string[] {
                         "container",
                         "storage_emulator"});
-#line 83
+#line 106
 this.ScenarioSetup(scenarioInfo);
-#line 84
+#line 107
+ testRunner.Given("we use a linear retry strategy with periodicity of 10 seconds and 10 max retries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 108
+ testRunner.And("we use a do not retry policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
  testRunner.When("I execute the task with options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 110
  testRunner.Then("it should throw an AggregateException containing NullReferenceException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task using a multi-leasable with 3 leases")]
+        [NUnit.Framework.CategoryAttribute("container")]
+        [NUnit.Framework.CategoryAttribute("storage_emulator")]
+        public virtual void ASingleActorExecutesALongRunningTaskUsingAMulti_LeasableWith3Leases()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task using a multi-leasable with 3 leases", new string[] {
+                        "container",
+                        "storage_emulator"});
+#line 113
+this.ScenarioSetup(scenarioInfo);
+#line 114
+ testRunner.Given("the long running task takes 5 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name"});
+            table1.AddRow(new string[] {
+                        "\"lease1\""});
+            table1.AddRow(new string[] {
+                        "\"lease2\""});
+            table1.AddRow(new string[] {
+                        "\"lease3\""});
+#line 115
+ testRunner.And("the lease names are", ((string)(null)), table1, "And ");
+#line 120
+ testRunner.When("I execute the task using all the leases", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.Then("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with duration longer than the lease p" +
+            "eriod using a multi-leasable with 3 leases")]
+        [NUnit.Framework.CategoryAttribute("container")]
+        [NUnit.Framework.CategoryAttribute("storage_emulator")]
+        public virtual void ASingleActorExecutesALongRunningTaskWithDurationLongerThanTheLeasePeriodUsingAMulti_LeasableWith3Leases()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with duration longer than the lease p" +
+                    "eriod using a multi-leasable with 3 leases", new string[] {
+                        "container",
+                        "storage_emulator"});
+#line 124
+this.ScenarioSetup(scenarioInfo);
+#line 125
+ testRunner.Given("the long running task takes 70 seconds to complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name"});
+            table2.AddRow(new string[] {
+                        "\"lease1\""});
+            table2.AddRow(new string[] {
+                        "\"lease2\""});
+            table2.AddRow(new string[] {
+                        "\"lease3\""});
+#line 126
+ testRunner.And("the lease names are", ((string)(null)), table2, "And ");
+#line 131
+ testRunner.When("I execute the task using all the leases", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 132
+ testRunner.Then("1 action(s) should have completed successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

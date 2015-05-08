@@ -8,7 +8,7 @@
 
     using Microsoft.WindowsAzure.Storage;
 
-    #endregion 
+    #endregion Using Directives
 
     /// <summary>
     /// Retry policy that will retry unless a HTTP 409 Conflict status code is detected.
@@ -25,12 +25,7 @@
         {
             var storageException = exception as StorageException;
 
-            if (storageException != null && storageException.RequestInformation.HttpStatusCode == 409)
-            {
-                return false;
-            }
-
-            return true;
+            return storageException == null || storageException.RequestInformation.HttpStatusCode != 409;
         }
     }
 }

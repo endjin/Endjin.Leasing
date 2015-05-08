@@ -56,3 +56,9 @@ Scenario: Name is more than 1024 characters
 	And has a valid duration
 	When I validate the policy
 	Then it should throw a ArgumentOutOfRangeException
+
+Scenario: Name is null
+	Given the name on the lease policy is null
+	And has a valid duration
+	When I validate the policy
+	Then it should throw a ArgumentNullException

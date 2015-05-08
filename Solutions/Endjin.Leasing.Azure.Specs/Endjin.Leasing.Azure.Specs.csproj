@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,10 +7,11 @@
     <ProjectGuid>{5DED940C-7AF9-40A9-A00B-BF624093B921}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Endjin.Leasing.Azure.Specs</RootNamespace>
-    <AssemblyName>Endjin.Leasing.Azure.Specs</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Endjin.Storage.Leasing.Azure.Specs</RootNamespace>
+    <AssemblyName>Endjin.Storage.Leasing.Azure.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Endjin.SpecFlow">
@@ -35,9 +38,6 @@
     </Reference>
     <Reference Include="Endjin.SpecFlow.Azure.Storage">
       <HintPath>..\..\Packages\Endjin.SpecFlow.Azure.Storage.1.0.0.36\lib\net45\Endjin.SpecFlow.Azure.Storage.dll</HintPath>
-    </Reference>
-    <Reference Include="Endjin.SpecFlow.Composition">
-      <HintPath>..\..\Packages\Endjin.SpecFlow.Composition.1.0.0.36\lib\net45\Endjin.SpecFlow.Composition.dll</HintPath>
     </Reference>
     <Reference Include="EndjinCoreComposition, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -55,34 +55,33 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreContainerNet45.dll</HintPath>
     </Reference>
-    <Reference Include="EndjinRetry, Version=1.0.0.47, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EndjinRetry">
       <HintPath>..\..\Packages\Endjin.Retry.1.0.0.47\lib\portable-net45+win8\EndjinRetry.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="nunit.framework">
       <HintPath>..\..\Packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="Should, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Should">
       <HintPath>..\..\Packages\Should.1.1.20\lib\Should.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="TechTalk.SpecFlow">
       <HintPath>..\..\Packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\ConnectionStringProvider.cs" />
     <Compile Include="Features\Leasable.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Leasable.feature</DependentUpon>
     </Compile>
-    <Compile Include="Steps\LeasableSteps.cs" />
+    <Compile Include="Features\LeasablePerf.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeasablePerf.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Lease.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,9 +92,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LeasePolicyValidator.feature</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ConnectionStringProvider.cs" />
+    <Compile Include="Helpers\LeaseName.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\LeasablePerfSteps.cs" />
+    <Compile Include="Steps\LeasableSteps.cs" />
     <Compile Include="Steps\LeasePolicyValidatorSteps.cs" />
     <Compile Include="Steps\LeaseSteps.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\SharedSteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +106,10 @@
     <None Include="Features\Leasable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Leasable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\LeasablePerf.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LeasablePerf.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Lease.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -112,7 +119,12 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LeasePolicyValidator.feature.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Endjin.Leasing.Azure\Endjin.Leasing.Azure.csproj">

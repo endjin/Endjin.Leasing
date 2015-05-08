@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Endjin.Leasing.Azure.Specs")]
+[assembly: AssemblyTitle("Endjin.Storage.Leasing.Azure.Specs")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Endjin.Leasing.Azure.Specs")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyProduct("Endjin.Storage.Leasing.Azure.Specs")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("505181ca-e1dd-4333-b492-7352117e97ee")]
+[assembly: Guid("84acee5d-b340-4728-afca-228754c9a7b2")]
 
 // Version information for an assembly consists of the following four values:
 //

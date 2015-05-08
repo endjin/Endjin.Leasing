@@ -7,7 +7,7 @@
     using Endjin.Core.Retry.Policies;
     using Endjin.Leasing.Exceptions;
 
-    #endregion
+    #endregion Using Directives
 
     /// <summary>
     /// Retry Policy that will retry until the lease has been successfully acquired.

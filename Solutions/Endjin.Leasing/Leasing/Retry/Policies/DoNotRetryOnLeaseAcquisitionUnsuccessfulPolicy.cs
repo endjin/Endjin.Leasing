@@ -7,7 +7,7 @@
     using Endjin.Core.Retry.Policies;
     using Endjin.Leasing.Exceptions;
 
-    #endregion 
+    #endregion Using Directives
 
     /// <summary>
     /// Retry policy that will retry unless a HTTP 409 Conflict status code is detected.

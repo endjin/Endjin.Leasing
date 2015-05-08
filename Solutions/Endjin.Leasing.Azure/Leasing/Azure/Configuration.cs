@@ -6,7 +6,7 @@
 
     using Microsoft.Azure;
 
-    #endregion
+    #endregion Using Directives
 
     /// <summary>
     /// Wrapper around the <see cref="CloudConfigurationManager"/> which provides a cache to improve performance.
@@ -30,7 +30,7 @@
                 Cache.TryAdd(settingName, setting);
                 result = setting;
             }
-            
+
             return result;
         }
     }

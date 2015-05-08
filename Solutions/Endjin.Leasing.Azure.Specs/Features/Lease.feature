@@ -9,6 +9,7 @@ Scenario: Acquire a lease with valid policy
 	Given I am the only actor trying to perform an operation called "long-running-task"
 	And I want to acquire a lease for 15 seconds
 	When I acquire the lease
+	Then the lease should expire in the future
 	Then it should retain the lease for 15 seconds
 	And the lease should be expired after 15 seconds
 
@@ -32,6 +33,7 @@ Scenario: A single actor reacquires a lease that it already has acquired
 	And I want to acquire a lease for 15 seconds
 	And I have already acquired the lease
 	When I acquire the lease
+	Then the lease should expire in the future
 	Then it should retain the lease for 15 seconds
 	And the lease should be expired after 15 seconds
 
@@ -52,6 +54,7 @@ Scenario: A single actor renews a lease that it already has acquired
 	And I want to acquire a lease for 15 seconds
 	And I have already acquired the lease
 	When I renew the lease
+	Then the lease should expire in the future
 	Then it should retain the lease for 15 seconds
 	And the lease should be expired after 15 seconds
 

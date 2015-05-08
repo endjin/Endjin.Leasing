@@ -1,4 +1,4 @@
-﻿namespace Endjin.Contracts
+﻿namespace Endjin.Contracts.Leasing
 {
     using System;
 
@@ -8,9 +8,9 @@
     public interface ILeasePolicy
     {
         /// <summary>
-        /// Gets or sets the name of the lease.
+        /// Gets or sets the name for the actor requesting the lease.
         /// </summary>
-        string Name { get; set; }
+        string ActorName { get; set; }
 
         /// <summary>
         /// Gets or sets the duration before the lease expires.
@@ -18,8 +18,8 @@
         TimeSpan? Duration { get; set; }
 
         /// <summary>
-        /// Gets or sets the name for the actor requesting the lease.
+        /// Gets or sets the name of the lease.
         /// </summary>
-        string ActorName { get; set; }
+        string Name { get; set; }
     }
 }

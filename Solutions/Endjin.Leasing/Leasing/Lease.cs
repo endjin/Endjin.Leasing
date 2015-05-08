@@ -7,18 +7,18 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using Endjin.Contracts;
+    using Endjin.Contracts.Leasing;
 
-    #endregion
+    #endregion Using Directives
 
     /// <summary>
     /// Describes the behavior for a lease on a distributed system.
     /// </summary>
-    public class Lease : ILease
+    public class Lease : IDisposable
     {
         private readonly ILeaseProvider leaseProvider;
 
-        public Lease(ILeasePolicyValidator leasePolicyValidator, ILeaseProvider leaseProvider)
+        public Lease(ILeaseProvider leaseProvider, ILeasePolicyValidator leasePolicyValidator)
         {
             this.LeasePolicyValidator = leasePolicyValidator;
             this.leaseProvider = leaseProvider;
@@ -27,7 +27,7 @@
         /// <summary>
         /// Gets a value indicating when the lease expires
         /// </summary>
-        public DateTime? Expires
+        public DateTimeOffset? Expires
         {
             get
             {
@@ -36,7 +36,7 @@
                     return null;
                 }
 
-                return !this.LeasePolicy.Duration.HasValue ? DateTime.MaxValue : this.LastAcquired.Value.Add(this.LeasePolicy.Duration.Value);
+                return !this.LeasePolicy.Duration.HasValue ? DateTimeOffset.MaxValue : this.LastAcquired.Value.Add(this.LeasePolicy.Duration.Value);
             }
         }
 
@@ -56,7 +56,7 @@
         /// <summary>
         /// Gets the time the lease was last acquired.
         /// </summary>
-        public DateTime? LastAcquired { get; private set; }
+        public DateTimeOffset? LastAcquired { get; private set; }
 
         /// <summary>
         /// Gets the lease policy.
@@ -83,7 +83,7 @@
 
             if (!string.IsNullOrEmpty(this.Id))
             {
-                this.LastAcquired = DateTime.UtcNow;
+                this.LastAcquired = DateTimeOffset.UtcNow;
             }
         }
 
@@ -92,14 +92,21 @@
         /// </summary>
         public void Dispose()
         {
+#pragma warning disable 4014
+            this.DisposeAsync();
+#pragma warning restore 4014
+        }
+
+        public async Task DisposeAsync()
+        {
+            GC.SuppressFinalize(this);
+
             if (this.HasLease)
             {
-                Trace.TraceInformation(Strings.LeaseDisposeCalled);
-                this.ReleaseAsync().Wait();
-                Trace.TraceInformation(Strings.LeaseSuccessfullyDisposed);
+                Trace.TraceInformation("Lease.Dispose called.");
+                await this.ReleaseAsync();
+                Trace.TraceInformation("Lease successfully disposed.");
             }
-
-            GC.SuppressFinalize(this);
         }
 
         /// <summary>
@@ -111,17 +118,12 @@
         {
             if (!this.HasLease)
             {
-                throw new InvalidOperationException(Strings.ALeaseMustFirstBeAcquiredInOrderToExtendTheLease);
-            }
-
-            if (this.LeasePolicy == null)
-            {
-                throw new InvalidOperationException(Strings.TheLeasePolicyMustNotBeNullInOrderToExtendTheLease);
+                throw new InvalidOperationException("A lease must first be acquired in order to extend to lease.");
             }
 
             await this.leaseProvider.ExtendAsync(this.Id);
 
-            this.LastAcquired = DateTime.UtcNow;
+            this.LastAcquired = DateTimeOffset.UtcNow;
         }
 
         public async Task ExtendAsync(CancellationToken cancellationToken)
@@ -140,7 +142,7 @@
         {
             // todo what happens if we don't have a lease?
             await this.leaseProvider.ReleaseAsync(this.Id);
-            
+
             this.Id = null;
             this.LastAcquired = null;
         }
@@ -152,7 +154,7 @@
                 return false;
             }
 
-            var remaining = DateTime.UtcNow - this.LastAcquired.Value;
+            var remaining = DateTimeOffset.UtcNow - this.LastAcquired.Value;
 
             if (this.LeasePolicy.Duration.HasValue)
             {

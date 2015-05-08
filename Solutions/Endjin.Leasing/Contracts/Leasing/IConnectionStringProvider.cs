@@ -1,4 +1,4 @@
-﻿namespace Endjin.Contracts.Leasing.Azure.Configuration
+﻿namespace Endjin.Contracts.Leasing
 {
     public interface IConnectionStringProvider
     {

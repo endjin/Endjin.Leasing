@@ -5,8 +5,8 @@
     using System;
 
     using Endjin.Core.Retry.Policies;
-    
-    #endregion
+
+    #endregion Using Directives
 
     /// <summary>
     /// Retry Policy that will not retry.

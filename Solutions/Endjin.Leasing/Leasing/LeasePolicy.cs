@@ -4,9 +4,9 @@
 
     using System;
 
-    using Endjin.Contracts;
+    using Endjin.Contracts.Leasing;
 
-    #endregion 
+    #endregion Using Directives
 
     /// <summary>
     /// Defines various options used in the creation and acquisition of a lease.
@@ -14,10 +14,9 @@
     public class LeasePolicy : ILeasePolicy
     {
         /// <summary>
-        /// Gets or sets the name of the lease.
+        /// Gets or sets the name for the actor requesting the lease.
         /// </summary>
-        /// <remarks>Different lease implementation will have different validity rules about the lease name.</remarks>
-        public string Name { get; set; }
+        public string ActorName { get; set; }
 
         /// <summary>
         /// Gets or sets the duration of the lease.
@@ -26,8 +25,9 @@
         public TimeSpan? Duration { get; set; }
 
         /// <summary>
-        /// Gets or sets the name for the actor requesting the lease.
+        /// Gets or sets the name of the lease.
         /// </summary>
-        public string ActorName { get; set; }
+        /// <remarks>Different lease implementation will have different validity rules about the lease name.</remarks>
+        public string Name { get; set; }
     }
 }

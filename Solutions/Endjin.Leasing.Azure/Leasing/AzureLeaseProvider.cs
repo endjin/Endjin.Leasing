@@ -1,4 +1,4 @@
-﻿namespace Endjin.Leasing.Azure
+﻿namespace Endjin.Leasing
 {
     #region Using Directives
 
@@ -7,29 +7,29 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using Endjin.Contracts;
-    using Endjin.Contracts.Leasing.Azure.Configuration;
+    using Endjin.Contracts.Leasing;
     using Endjin.Core.Retry;
     using Endjin.Core.Retry.Strategies;
+    using Endjin.Leasing.Azure;
     using Endjin.Leasing.Azure.Retry.Policies;
     using Endjin.Leasing.Exceptions;
 
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
 
-    #endregion 
+    #endregion Using Directives
 
     /// <summary>
     /// The platform specific implementation used for lease operations
     /// </summary>
-    public class LeaseProvider : ILeaseProvider
+    public class AzureLeaseProvider : ILeaseProvider
     {
         private readonly IConnectionStringProvider connectionStringProvider;
 
         private CloudBlockBlob blob;
         private bool isInitialised;
 
-        public LeaseProvider(IConnectionStringProvider connectionStringProvider)
+        public AzureLeaseProvider(IConnectionStringProvider connectionStringProvider)
         {
             this.connectionStringProvider = connectionStringProvider;
         }
@@ -84,9 +84,11 @@
                 {
                     throw new LeaseAcquisitionUnsuccessfulException(this.LeasePolicy, exception);
                 }
+                else
+                {
+                    throw;
+                }
             }
-
-            return null;
         }
 
         /// <summary>
@@ -117,8 +119,10 @@
             if (!this.isInitialised)
             {
                 var storageAccount = CloudStorageAccount.Parse(Configuration.GetSettingFor(this.connectionStringProvider.ConnectionStringKey));
+
                 var client = storageAccount.CreateCloudBlobClient();
-                var container = client.GetContainerReference("endjin-leasing-leases");
+
+                var container = client.GetContainerReference("endjin-leasing");
 
                 await Retriable.RetryAsync(container.CreateIfNotExistsAsync);
 

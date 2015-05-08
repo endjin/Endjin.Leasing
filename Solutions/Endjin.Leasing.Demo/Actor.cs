@@ -8,6 +8,7 @@
 
     using Endjin.Core.Composition;
     using Endjin.Core.Retry.Strategies;
+    using Endjin.Leasing.Demo.Configuration;
     using Endjin.Leasing.Retry.Policies;
 
     #endregion 
@@ -24,10 +25,10 @@
         /// <summary>
         /// This will retry until it sucessfully executes.
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>new 
         public Task RunSimpleMutexAsync()
         {
-            var leasable = new Leasable();
+            var leasable = new Leasable(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
 
             return leasable.MutexAsync(this.DoSomethingAsync, "LeasingTestHarness", this.Name);
         }
@@ -38,7 +39,7 @@
         /// <returns></returns>
         public Task RunMutexWithOptionsAsync()
         {
-            var leasable = new Leasable
+            var leasable = new Leasable(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator())
             {
                 LeasePolicy = new LeasePolicy { Duration = TimeSpan.FromSeconds(15), Name = "LeasingTestHarness", ActorName = this.Name },
                 RetryStrategy = new DoNotRetry(),

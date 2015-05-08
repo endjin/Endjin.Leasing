@@ -1,8 +1,8 @@
-﻿namespace Endjin.Leasing.Azure.Specs.Configuration
+﻿namespace Endjin.Storage.Leasing.Azure.Specs.Helpers
 {
     #region Using Directives
 
-    using Endjin.Contracts.Leasing.Azure.Configuration;
+    using Endjin.Contracts.Leasing;
 
     #endregion
 
@@ -12,7 +12,7 @@
         {
             get
             {
-                return "Storage.Leasing.ConnectionString";
+                return "Endjin.Leasing.ConnectionString";
             }
         }
     }

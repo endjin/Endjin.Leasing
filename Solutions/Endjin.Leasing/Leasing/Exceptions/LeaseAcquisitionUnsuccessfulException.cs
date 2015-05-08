@@ -4,24 +4,15 @@
 
     using System;
 
-    using Endjin.Contracts;
+    using Endjin.Contracts.Leasing;
 
-    #endregion 
+    #endregion Using Directives
 
     /// <summary>
     /// Exception that represents that a Lease could not be acquired successfully.
     /// </summary>
     public class LeaseAcquisitionUnsuccessfulException : Exception
     {
-        /// <summary>
-        /// Initializes a new instance of the LeaseAcquisitionUnsuccessfulException class containing the lease policy that was used during the attempt.
-        /// </summary>
-        /// <param name="leasePolicy">The lease policy used during the attempt to acquire the lease.</param>
-        public LeaseAcquisitionUnsuccessfulException(ILeasePolicy leasePolicy)
-        {
-            this.LeasePolicy = leasePolicy;
-        }
-
         /// <summary>
         /// Initializes a new instance of the LeaseAcquisitionUnsuccessfulException class containing the lease policy that was used during the attempt.
         /// </summary>
@@ -35,6 +26,6 @@
         /// <summary>
         /// Gets the lease policy used during the attempt to acquire the lease.
         /// </summary>
-        public ILeasePolicy LeasePolicy { get; private set; } 
+        public ILeasePolicy LeasePolicy { get; private set; }
     }
 }
