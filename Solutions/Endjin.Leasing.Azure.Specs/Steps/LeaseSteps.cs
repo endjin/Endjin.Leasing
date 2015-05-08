@@ -1,13 +1,14 @@
-﻿namespace Endjin.Storage.Leasing.Azure.Specs.Steps
+﻿namespace Endjin.Leasing.Azure.Specs.Steps
 {
     #region Using Directives
 
-    using NUnit.Framework;
     using System;
     using System.Threading;
 
     using Endjin.Leasing;
-    using Endjin.Storage.Leasing.Azure.Specs.Helpers;
+    using Endjin.Leasing.Azure.Specs.Helpers;
+
+    using NUnit.Framework;
 
     using TechTalk.SpecFlow;
 

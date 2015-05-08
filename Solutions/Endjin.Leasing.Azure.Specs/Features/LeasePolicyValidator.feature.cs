@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Endjin.Storage.Leasing.Azure.Specs.Features
+namespace Endjin.Leasing.Azure.Specs.Features
 {
     using TechTalk.SpecFlow;
     

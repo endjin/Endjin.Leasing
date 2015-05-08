@@ -7,8 +7,8 @@
     <ProjectGuid>{5DED940C-7AF9-40A9-A00B-BF624093B921}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Endjin.Storage.Leasing.Azure.Specs</RootNamespace>
-    <AssemblyName>Endjin.Storage.Leasing.Azure.Specs</AssemblyName>
+    <RootNamespace>Endjin.Leasing.Azure.Specs</RootNamespace>
+    <AssemblyName>Endjin.Leasing.Azure.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

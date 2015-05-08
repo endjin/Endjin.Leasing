@@ -1,4 +1,4 @@
-﻿namespace Endjin.Storage.Leasing.Azure.Specs.Steps
+﻿namespace Endjin.Leasing.Azure.Specs.Steps
 {
     #region Using Directives
 

@@ -1,4 +1,4 @@
-﻿namespace Endjin.Storage.Leasing.Azure.Specs.Steps
+﻿namespace Endjin.Leasing.Azure.Specs.Steps
 {
     #region Using Directives
 
@@ -9,12 +9,10 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using Endjin.Contracts.Leasing;
-    using Endjin.Core.Composition;
     using Endjin.Core.Retry.Strategies;
     using Endjin.Leasing;
+    using Endjin.Leasing.Azure.Specs.Helpers;
     using Endjin.Leasing.Retry.Policies;
-    using Endjin.Storage.Leasing.Azure.Specs.Helpers;
 
     using NUnit.Framework;
 
