@@ -21,6 +21,6 @@
   <files>
     <file src="License.txt" target="License.txt" />
     <file src="Install.ps1" target="tools" />
-    <file src="Endjin.Storage.Leasing.dll" target="lib\net45\" />
+    <file src="Endjin.Leasing.dll" target="lib\net45\" />
   </files>
 </package>
