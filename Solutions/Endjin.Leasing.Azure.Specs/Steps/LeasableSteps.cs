@@ -48,7 +48,7 @@
         [Given(@"actor A executes the task")]
         public void GivenActorAExecutesTheTask()
         {
-            var leasableFactory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var leasableFactory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
             var leasable = leasableFactory.Create();
             var leaseName = ScenarioContext.Current.Get<string>(LeaseName);
 
@@ -60,7 +60,7 @@
         [Given(@"actor A executes the task with a try once mutex")]
         public void GivenActorAExecutesTheTaskWithATryOnceMutex()
         {
-            var leasableFactory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var leasableFactory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
             var leasable = leasableFactory.Create();
             var leaseName = ScenarioContext.Current.Get<string>(LeaseName);
 
@@ -72,7 +72,7 @@
         [Given(@"actor A executes the task with options")]
         public void GivenActorAExecutesTheTaskWithOptions()
         {
-            var leasableFactory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var leasableFactory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
             var leasable = leasableFactory.Create();
 
             string leaseName;
@@ -103,7 +103,7 @@
         [Given(@"actor B is currently running the task")]
         public void GivenActorBIsCurrentlyRunningTheTask()
         {
-            var leasableFactory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var leasableFactory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
             var leasable = leasableFactory.Create();
             var leaseName = ScenarioContext.Current.Get<string>(LeaseName);
 
@@ -228,7 +228,7 @@
         [When(@"I execute the task")]
         public void WhenIExecuteTheTask()
         {
-            var leasableFactory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var leasableFactory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
             var leasable = leasableFactory.Create();
             var leaseName = ScenarioContext.Current.Get<string>(LeaseName);
 
@@ -254,7 +254,7 @@
         public void WhenIExecuteTheTaskUsingAllTheLeases()
         {
             var leaseNames = ScenarioContext.Current.Get<IEnumerable<LeaseName>>(LeaseNames).Select(ln => ln.Name);
-            var multiLeasableFactory = ApplicationServiceLocator.Container.Resolve<IMultiLeasableFactory>();
+            var multiLeasableFactory = new MultiLeasableFactory(new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator()));
 
             var multiLeasable = multiLeasableFactory.Create();
 
@@ -264,7 +264,7 @@
         [When(@"I execute the task with a result")]
         public void WhenIExecuteTheTaskWithAResult()
         {
-            var leasableFactory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var leasableFactory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
             var leasable = leasableFactory.Create();
             var leaseName = ScenarioContext.Current.Get<string>(LeaseName);
 
@@ -290,7 +290,7 @@
         [When(@"I execute the task with options")]
         public void WhenIExecuteTheTaskWithOptions()
         {
-            var leasableFactory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var leasableFactory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
             var leasable = leasableFactory.Create();
 
             string leaseName;

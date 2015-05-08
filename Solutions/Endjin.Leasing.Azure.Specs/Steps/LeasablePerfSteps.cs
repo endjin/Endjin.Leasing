@@ -14,6 +14,7 @@
     using Endjin.Core.Retry.Strategies;
     using Endjin.Leasing;
     using Endjin.Leasing.Retry.Policies;
+    using Endjin.Storage.Leasing.Azure.Specs.Helpers;
 
     using NUnit.Framework;
 
@@ -88,7 +89,7 @@
         [When(@"I run (.*) actions using leasable")]
         public void WhenIRunActionsUsingLeasable(int numberOfActions)
         {
-            var factory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var factory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -107,7 +108,7 @@
         [When(@"I run (.*) mutex actions simultaneously")]
         public void WhenIRunMutexActionsSimultaneously(int numberOfActions)
         {
-            var factory = ApplicationServiceLocator.Container.Resolve<ILeasableFactory>();
+            var factory = new LeasableFactory(new AzureLeaseProviderFactory(new ConnectionStringProvider()), new AzureLeasePolicyValidator());
 
             var duration = ScenarioContext.Current.Get<TimeSpan>("duration");
 
