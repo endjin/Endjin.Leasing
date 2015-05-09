@@ -14,7 +14,7 @@
     using Endjin.Leasing.Exceptions;
     using Endjin.Leasing.Retry.Policies;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// Describes the behavior for the distributed execution of an action in isolation.
@@ -59,12 +59,12 @@
             var lease = new Lease(leaseProvider, this.leasePolicyValidator);
 
             await Retriable.RetryAsync(async () =>
-                {
-                    await this.AcquireLeaseAndStartRenewingAsync(cancellationToken, leaseProvider, lease);
-                },
-                cancellationToken,
-                this.RetryStrategy,
-                this.RetryPolicy);
+            {
+                await this.AcquireLeaseAndStartRenewingAsync(cancellationToken, leaseProvider, lease);
+            },
+            cancellationToken,
+            this.RetryStrategy,
+            this.RetryPolicy);
 
             return lease;
         }
@@ -77,14 +77,13 @@
 
             var lease = new Lease(leaseProvider, this.leasePolicyValidator);
 
-            await Retriable.RetryAsync(
-                async () =>
-                {
-                    await this.AcquireLeaseAndStartRenewingAsync(cancellationToken, leaseProvider, lease);
-                },
-                cancellationToken,
-                this.RetryStrategy,
-                this.RetryPolicy);
+            await Retriable.RetryAsync(async () =>
+            {
+                await this.AcquireLeaseAndStartRenewingAsync(cancellationToken, leaseProvider, lease);
+            },
+            cancellationToken,
+            this.RetryStrategy,
+            this.RetryPolicy);
 
             return lease;
         }
@@ -166,7 +165,10 @@
         /// <summary>
         /// Provides a single attempt to create a distributed lock whilst executing the given async action to execute to ensure isolation.
         /// </summary>
-        /// <remarks>Creates a default CancellationToken and Retry Strategy, and uses a <see cref="DoNotRetryOnLeaseAcquisitionUnsuccessfulPolicy"/>. If lease acquisition is unsuccessful, no more attempts are tried.</remarks>
+        /// <remarks>
+        /// Creates a default CancellationToken and Retry Strategy, and uses a <see cref="DoNotRetryOnLeaseAcquisitionUnsuccessfulPolicy"/>. 
+        /// If lease acquisition is unsuccessful, no more attempts are tried.
+        /// </remarks>
         /// <param name="action">An async action to execute</param>
         /// <param name="leaseName">The name of the lease</param>
         /// <param name="actorName"></param>
@@ -396,14 +398,13 @@
             {
                 this.CheckProperties();
 
-                await Retriable.RetryAsync(
-                        async () =>
-                        {
-                            await this.AcquireLeaseAndExecuteInnerAsync(action, cancellationTokenSource, leaseProvider);
-                        },
-                        cancellationTokenSource.Token,
-                        this.RetryStrategy,
-                        this.RetryPolicy);
+                await Retriable.RetryAsync(async () =>
+                {
+                    await this.AcquireLeaseAndExecuteInnerAsync(action, cancellationTokenSource, leaseProvider);
+                },
+                cancellationTokenSource.Token,
+                this.RetryStrategy,
+                this.RetryPolicy);
 
                 return true;
             }
@@ -439,14 +440,13 @@
             {
                 this.CheckProperties();
 
-                await Retriable.RetryAsync(
-                        async () =>
-                        {
-                            await this.AcquireLeaseAndExecuteInnerAsync(action, cancellationTokenSource, leaseProvider, arg);
-                        },
-                        cancellationTokenSource.Token,
-                        this.RetryStrategy,
-                        this.RetryPolicy);
+                await Retriable.RetryAsync(async () =>
+                {
+                    await this.AcquireLeaseAndExecuteInnerAsync(action, cancellationTokenSource, leaseProvider, arg);
+                },
+                cancellationTokenSource.Token,
+                this.RetryStrategy,
+                this.RetryPolicy);
 
                 return true;
             }

@@ -6,17 +6,12 @@
     using System.Diagnostics;
     using System.Threading.Tasks;
 
-    using Endjin.Core.Composition;
-    using Endjin.Core.Container;
-
     #endregion 
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            ApplicationServiceLocator.InitializeAsync(new Container(), new DesktopBootstrapper()).Wait();
-
             RunMutex();
             RunMutexWithOptions();
 

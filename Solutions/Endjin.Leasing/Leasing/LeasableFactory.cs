@@ -4,7 +4,7 @@
 
     using Endjin.Contracts.Leasing;
 
-    #endregion Using Directives
+    #endregion
 
     public class LeasableFactory : ILeasableFactory
     {

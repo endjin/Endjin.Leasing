@@ -6,7 +6,7 @@
 
     using Endjin.Contracts.Leasing;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// Defines various options used in the creation and acquisition of a lease.

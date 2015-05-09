@@ -70,13 +70,11 @@ namespace Endjin.Leasing.Azure.Specs.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with duration less than the lease pol" +
             "icy")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskWithDurationLessThanTheLeasePolicy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with duration less than the lease pol" +
                     "icy", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 8
 this.ScenarioSetup(scenarioInfo);
@@ -99,13 +97,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with a result with duration less than" +
             " the lease policy")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskWithAResultWithDurationLessThanTheLeasePolicy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with a result with duration less than" +
                     " the lease policy", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 17
 this.ScenarioSetup(scenarioInfo);
@@ -130,13 +126,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with duration more than the lease pol" +
             "icy")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskWithDurationMoreThanTheLeasePolicy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with duration more than the lease pol" +
                     "icy", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 27
 this.ScenarioSetup(scenarioInfo);
@@ -159,13 +153,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Actor A attempts to execute a long running task whilst Actor B is currently runni" +
             "ng the task")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ActorAAttemptsToExecuteALongRunningTaskWhilstActorBIsCurrentlyRunningTheTask()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Actor A attempts to execute a long running task whilst Actor B is currently runni" +
                     "ng the task", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 36
 this.ScenarioSetup(scenarioInfo);
@@ -192,13 +184,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Actor A attempts to execute a long running task with a do not retry policy and a " +
             "linear retry strategy, whilst Actor B is currently running the task")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ActorAAttemptsToExecuteALongRunningTaskWithADoNotRetryPolicyAndALinearRetryStrategyWhilstActorBIsCurrentlyRunningTheTask()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Actor A attempts to execute a long running task with a do not retry policy and a " +
                     "linear retry strategy, whilst Actor B is currently running the task", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 47
 this.ScenarioSetup(scenarioInfo);
@@ -231,13 +221,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Actor A attempts to execute a long running task with a try once mutex, whilst Act" +
             "or B is currently running the task")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ActorAAttemptsToExecuteALongRunningTaskWithATryOnceMutexWhilstActorBIsCurrentlyRunningTheTask()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Actor A attempts to execute a long running task with a try once mutex, whilst Act" +
                     "or B is currently running the task", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 61
 this.ScenarioSetup(scenarioInfo);
@@ -265,14 +253,12 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Actor A attempts to execute a long running task with a do not retry on lease acqu" +
             "isition unsuccessful policy and a linear retry strategy, whilst Actor B is curre" +
             "ntly running the task")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ActorAAttemptsToExecuteALongRunningTaskWithADoNotRetryOnLeaseAcquisitionUnsuccessfulPolicyAndALinearRetryStrategyWhilstActorBIsCurrentlyRunningTheTask()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Actor A attempts to execute a long running task with a do not retry on lease acqu" +
                     "isition unsuccessful policy and a linear retry strategy, whilst Actor B is curre" +
                     "ntly running the task", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 72
 this.ScenarioSetup(scenarioInfo);
@@ -305,13 +291,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with a retry until lease acquired pol" +
             "icy and no retry strategy")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskWithARetryUntilLeaseAcquiredPolicyAndNoRetryStrategy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with a retry until lease acquired pol" +
                     "icy and no retry strategy", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 86
 this.ScenarioSetup(scenarioInfo);
@@ -336,13 +320,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with no retry policy and a linear ret" +
             "ry strategy")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskWithNoRetryPolicyAndALinearRetryStrategy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with no retry policy and a linear ret" +
                     "ry strategy", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 96
 this.ScenarioSetup(scenarioInfo);
@@ -366,12 +348,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with no lease policy")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskWithNoLeasePolicy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with no lease policy", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 106
 this.ScenarioSetup(scenarioInfo);
@@ -389,12 +369,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task using a multi-leasable with 3 leases")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskUsingAMulti_LeasableWith3Leases()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task using a multi-leasable with 3 leases", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 113
 this.ScenarioSetup(scenarioInfo);
@@ -422,13 +400,11 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A single actor executes a long running task with duration longer than the lease p" +
             "eriod using a multi-leasable with 3 leases")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void ASingleActorExecutesALongRunningTaskWithDurationLongerThanTheLeasePeriodUsingAMulti_LeasableWith3Leases()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A single actor executes a long running task with duration longer than the lease p" +
                     "eriod using a multi-leasable with 3 leases", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 124
 this.ScenarioSetup(scenarioInfo);

@@ -1,5 +1,5 @@
 ﻿Feature: LeasePolicyValidator
-	In order to create a valid lease using windows Azure blob storage
+	In order to create a valid lease using Azure blob storage
 	As a dev
 	I want to ensure the lease policy meets the Azure blob leasing rules
 

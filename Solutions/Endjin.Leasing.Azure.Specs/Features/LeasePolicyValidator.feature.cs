@@ -32,8 +32,8 @@ namespace Endjin.Leasing.Azure.Specs.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LeasePolicyValidator", "In order to create a valid lease using windows Azure blob storage\r\nAs a dev\r\nI wa" +
-                    "nt to ensure the lease policy meets the Azure blob leasing rules", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LeasePolicyValidator", "In order to create a valid lease using Azure blob storage\r\nAs a dev\r\nI want to en" +
+                    "sure the lease policy meets the Azure blob leasing rules", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

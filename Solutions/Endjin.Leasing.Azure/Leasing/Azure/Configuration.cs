@@ -6,7 +6,7 @@
 
     using Microsoft.Azure;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// Wrapper around the <see cref="CloudConfigurationManager"/> which provides a cache to improve performance.

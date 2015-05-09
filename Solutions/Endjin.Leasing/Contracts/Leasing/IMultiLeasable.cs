@@ -10,7 +10,7 @@ namespace Endjin.Contracts.Leasing
     using Endjin.Core.Retry.Policies;
     using Endjin.Core.Retry.Strategies;
 
-    #endregion Using Directives
+    #endregion
 
     public interface IMultiLeasable
     {
@@ -20,7 +20,6 @@ namespace Endjin.Contracts.Leasing
 
         Task MutexAsync(Func<CancellationToken, Task> action, IEnumerable<string> leaseNames, string actorName = "");
 
-        Task MutexWithOptionsAsync(Func<CancellationToken, Task> action, IEnumerable<string> leaseNames,
-            TimeSpan leaseDuration, string actorName = "");
+        Task MutexWithOptionsAsync(Func<CancellationToken, Task> action, IEnumerable<string> leaseNames, TimeSpan leaseDuration, string actorName = "");
     }
 }

@@ -33,22 +33,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EndjinCoreComposition, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreComposition.dll</HintPath>
-    </Reference>
-    <Reference Include="EndjinCoreCompositionNet45, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreCompositionNet45.dll</HintPath>
-    </Reference>
-    <Reference Include="EndjinCoreContainer, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreContainer.dll</HintPath>
-    </Reference>
-    <Reference Include="EndjinCoreContainerNet45, Version=2.2.0.45, Culture=neutral, PublicKeyToken=50271567b54a4602, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreContainerNet45.dll</HintPath>
-    </Reference>
     <Reference Include="EndjinRetry">
       <HintPath>..\..\Packages\Endjin.Retry.1.0.0.47\lib\portable-net45+win8\EndjinRetry.dll</HintPath>
     </Reference>
@@ -91,7 +75,6 @@
     <Compile Include="Leasing\AzureLeaseProviderFactory.cs" />
     <Compile Include="Leasing\Azure\Retry\Policies\DoNotRetryOnConflictPolicy.cs" />
     <Compile Include="Leasing\Azure\Configuration.cs" />
-    <Compile Include="Leasing\Azure\Installers\LeasingInstaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

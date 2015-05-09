@@ -6,7 +6,7 @@
 
     using Endjin.Core.Retry.Policies;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// Retry Policy that will not retry.

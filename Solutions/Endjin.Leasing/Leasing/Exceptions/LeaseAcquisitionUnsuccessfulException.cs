@@ -6,7 +6,7 @@
 
     using Endjin.Contracts.Leasing;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// Exception that represents that a Lease could not be acquired successfully.

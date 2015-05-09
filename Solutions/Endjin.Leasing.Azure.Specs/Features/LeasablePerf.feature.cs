@@ -21,7 +21,6 @@ namespace Endjin.Leasing.Azure.Specs.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Leasable Perf")]
     [NUnit.Framework.CategoryAttribute("ReleaseLeases")]
-    [NUnit.Framework.CategoryAttribute("container")]
     public partial class LeasablePerfFeature
     {
         
@@ -35,8 +34,7 @@ namespace Endjin.Leasing.Azure.Specs.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Leasable Perf", "", ProgrammingLanguage.CSharp, new string[] {
-                        "ReleaseLeases",
-                        "container"});
+                        "ReleaseLeases"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,12 +68,10 @@ namespace Endjin.Leasing.Azure.Specs.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create 100 leasables")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Create100Leasables()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create 100 leasables", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
@@ -89,12 +85,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 mutex actions simultaneously with 5ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10MutexActionsSimultaneouslyWith5MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 mutex actions simultaneously with 5ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 10
 this.ScenarioSetup(scenarioInfo);
@@ -110,12 +104,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions consecutively with 5ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsConsecutivelyWith5MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions consecutively with 5ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 16
 this.ScenarioSetup(scenarioInfo);
@@ -131,12 +123,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions simultaneously with 5ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsSimultaneouslyWith5MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions simultaneously with 5ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 22
 this.ScenarioSetup(scenarioInfo);
@@ -152,12 +142,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 mutex actions simultaneously with 50ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10MutexActionsSimultaneouslyWith50MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 mutex actions simultaneously with 50ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 28
 this.ScenarioSetup(scenarioInfo);
@@ -173,12 +161,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions consecutively with 50ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsConsecutivelyWith50MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions consecutively with 50ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 34
 this.ScenarioSetup(scenarioInfo);
@@ -194,12 +180,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions simultaneously with 50ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsSimultaneouslyWith50MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions simultaneously with 50ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 40
 this.ScenarioSetup(scenarioInfo);
@@ -215,12 +199,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 mutex actions simultaneously with 500ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10MutexActionsSimultaneouslyWith500MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 mutex actions simultaneously with 500ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 46
 this.ScenarioSetup(scenarioInfo);
@@ -236,12 +218,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions consecutively with 500ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsConsecutivelyWith500MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions consecutively with 500ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 52
 this.ScenarioSetup(scenarioInfo);
@@ -257,12 +237,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions simultaneously with 500ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsSimultaneouslyWith500MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions simultaneously with 500ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 58
 this.ScenarioSetup(scenarioInfo);
@@ -278,12 +256,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 mutex actions simultaneously with 1000ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10MutexActionsSimultaneouslyWith1000MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 mutex actions simultaneously with 1000ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 64
 this.ScenarioSetup(scenarioInfo);
@@ -299,12 +275,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions consecutively with 1000ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsConsecutivelyWith1000MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions consecutively with 1000ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 70
 this.ScenarioSetup(scenarioInfo);
@@ -320,12 +294,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Run 10 actions simultaneously with 1000ms action")]
-        [NUnit.Framework.CategoryAttribute("container")]
         [NUnit.Framework.CategoryAttribute("storage_emulator")]
         public virtual void Run10ActionsSimultaneouslyWith1000MsAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Run 10 actions simultaneously with 1000ms action", new string[] {
-                        "container",
                         "storage_emulator"});
 #line 76
 this.ScenarioSetup(scenarioInfo);

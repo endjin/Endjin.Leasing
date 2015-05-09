@@ -9,7 +9,7 @@
 
     using Endjin.Contracts.Leasing;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// Describes the behavior for a lease on a distributed system.

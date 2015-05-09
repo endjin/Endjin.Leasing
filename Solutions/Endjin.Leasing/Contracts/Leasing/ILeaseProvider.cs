@@ -5,7 +5,7 @@
     using System;
     using System.Threading.Tasks;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// The platform specific implementation used for lease operations

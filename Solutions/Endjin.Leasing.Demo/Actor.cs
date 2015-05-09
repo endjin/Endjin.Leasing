@@ -6,7 +6,6 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using Endjin.Core.Composition;
     using Endjin.Core.Retry.Strategies;
     using Endjin.Leasing.Demo.Configuration;
     using Endjin.Leasing.Retry.Policies;

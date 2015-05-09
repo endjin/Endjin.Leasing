@@ -6,7 +6,7 @@
 
     using Endjin.Contracts.Leasing;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// Describes the behavior for validating Lease Policies.
@@ -24,7 +24,7 @@
         {
             if (leasePolicy.Duration.HasValue && (leasePolicy.Duration < TimeSpan.FromSeconds(15) || leasePolicy.Duration > TimeSpan.FromSeconds(59)))
             {
-                throw new ArgumentOutOfRangeException("leasePolicy", "Duration proprerty is out of range. Windows Azure finite blob lease must be betweem 15 and 59 seconds");
+                throw new ArgumentOutOfRangeException("leasePolicy", "Duration proprerty is out of range. Azure finite blob lease must be betweem 15 and 59 seconds");
             }
 
             if (leasePolicy.Name == null)

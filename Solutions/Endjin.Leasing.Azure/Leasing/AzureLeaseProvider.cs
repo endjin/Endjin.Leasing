@@ -17,7 +17,7 @@
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
 
-    #endregion Using Directives
+    #endregion
 
     /// <summary>
     /// The platform specific implementation used for lease operations
@@ -84,10 +84,8 @@
                 {
                     throw new LeaseAcquisitionUnsuccessfulException(this.LeasePolicy, exception);
                 }
-                else
-                {
-                    throw;
-                }
+                
+                throw;
             }
         }
 
@@ -122,7 +120,7 @@
 
                 var client = storageAccount.CreateCloudBlobClient();
 
-                var container = client.GetContainerReference("endjin-leasing");
+                var container = client.GetContainerReference("endjin-leasing-leases");
 
                 await Retriable.RetryAsync(container.CreateIfNotExistsAsync);
 

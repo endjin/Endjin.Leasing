@@ -12,12 +12,11 @@
     using Endjin.Core.Retry.Policies;
     using Endjin.Core.Retry.Strategies;
 
-    #endregion Using Directives
+    #endregion
 
     public class MultiLeasable : IMultiLeasable
     {
         private readonly ILeasableFactory leasableFactory;
-
         private readonly List<Lease> leases = new List<Lease>();
 
         public MultiLeasable(ILeasableFactory leasableFactory)
