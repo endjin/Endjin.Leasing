@@ -3,7 +3,7 @@
     <metadata>
     <id>Endjin.Leasing</id>
     <version>3.0.0.0</version>
-    <description>Endjin's Leasing Framework</description>
+    <description>This package contains the core components of the leasing framework</description>
     <title>Endjin's Leasing Framework</title>
     <authors>Endjin</authors>
     <owners>Endjin</owners>

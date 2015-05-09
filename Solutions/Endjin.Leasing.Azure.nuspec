@@ -3,8 +3,8 @@
     <metadata>
     <id>Endjin.Leasing.Azure</id>
     <version>3.0.0.0</version>
-    <description>Windows Azure Blob based Leasing Framework</description>
-    <title>Endjin's Windows Azure based Leasing Framework</title>
+    <description>This package contains the Azure Storage extensions of the leasing framework</description>
+    <title>Endjin's Distributed Leasing Framework extensions for Azure Blob Storage</title>
     <authors>Endjin</authors>
     <owners>Endjin</owners>
     <copyright>Endjin 2015</copyright>
