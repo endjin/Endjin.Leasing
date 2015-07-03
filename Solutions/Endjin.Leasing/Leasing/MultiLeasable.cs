@@ -11,6 +11,7 @@
     using Endjin.Contracts.Leasing;
     using Endjin.Core.Retry.Policies;
     using Endjin.Core.Retry.Strategies;
+    using Endjin.Leasing.Retry.Policies;
 
     #endregion
 
@@ -24,10 +25,26 @@
             this.leasableFactory = leasableFactory;
         }
 
+        /// <summary>
+        /// Gets or sets the <see cref="IRetryPolicy"/> used to determine whether to retry acquisition of the lease
+        /// </summary>
+        /// <remarks>The two default policies are <see cref="RetryUntilLeaseAcquiredPolicy"/> and <see cref="DoNotRetryPolicy"/></remarks>
         public IRetryPolicy RetryPolicy { get; set; }
 
+        /// <summary>
+        /// Gets or sets the <see cref="IRetryStrategy"/> used to acquire the lease.
+        /// </summary>
         public IRetryStrategy RetryStrategy { get; set; }
 
+        /// <summary>
+        /// Provides a distributed lock using multiple leases whilst executing the given async action to execute to ensure isolation. 
+        /// Locks on all leases are obtained before the action is executed.
+        /// </summary>
+        /// <remarks>Creates a default CancellationToken, LeasePolicy and Retry Strategy.</remarks>
+        /// <param name="action">An async action to execute</param>
+        /// <param name="leaseNames">The names of the leases</param>
+        /// <param name="actorName">The name of the actor requesting the lease</param>
+        /// <returns>A task representing the async operation.</returns>
         public async Task MutexAsync(Func<CancellationToken, Task> action, IEnumerable<string> leaseNames, string actorName = "")
         {
             var cts = new CancellationTokenSource();
@@ -57,6 +74,15 @@
             await this.ReleaseLeasesAsync();
         }
 
+        /// <summary>
+        /// Provides a distributed lock using multiple leases whilst executing the given async action to execute to ensure isolation. 
+        /// Locks on all leases are obtained before the action is executed.
+        /// </summary>
+        /// <param name="action">An async action to execute</param>
+        /// <param name="leaseNames">The names of the leases</param>
+        /// <param name="leaseDuration">The duration before the lease expires after acquiring it successfully</param>
+        /// <param name="actorName">The name of the actor requesting the lease</param>
+        /// <returns>A task representing the async operation.</returns>
         public async Task MutexWithOptionsAsync(Func<CancellationToken, Task> action, IEnumerable<string> leaseNames, TimeSpan leaseDuration, string actorName = "")
         {
             var cts = new CancellationTokenSource();
